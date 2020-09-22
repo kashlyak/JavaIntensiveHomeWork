@@ -8,16 +8,16 @@ import java.util.List;
 
 
 public class Library {
-    List<Book> library;
+    List<Book> booksLibrary;
     public Library() {
-        this.library = new ArrayList<>();
+        this.booksLibrary = new ArrayList<>();
     }
     public void removeBook(Book book) {
-        library.remove(book);
+        booksLibrary.remove(book);
     }
 
     public Book findByName(String name) {
-        for (Book book : library){
+        for (Book book : booksLibrary){
             if(book.getName().equals(name)) {
                 return book;
             }
@@ -27,7 +27,7 @@ public class Library {
     }
     public List<Book> returnByAuthor(String author) {
         List<Book> authorBooks = new ArrayList<>();
-        for (Book book : library){
+        for (Book book : booksLibrary){
             if (book.getAuthor().equalsIgnoreCase(author)) {
                 authorBooks.add(book);
             }
@@ -38,13 +38,13 @@ public class Library {
 
 
     public void addBook(Book book) {
-         library.add(book);
+        booksLibrary.add(book);
     }
 
     @Override
     public String toString() {
         return "Library{" +
-                "library=" + library +
+                "library=" + booksLibrary +
                 '}';
     }
 }
